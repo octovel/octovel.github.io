@@ -10,9 +10,9 @@ Our mission is to improve the developer experience by building lightweight and e
 
 - [Terms of Service](./terms-of-service)
 - [Privacy Policy](./privacy-policies)
-- [Community Guidelines](./community/guidelines)
-- [Contribution Guidelines](./developer/guidelines)
-- [Developer Standards](./developer/standards)
+- [Community Guidelines](https://community.octovel.org/guidelines)
+- [Contribution Guidelines](https://developer.octovel.org/guidelines)
+- [Developer Standards](https://developer.octovel.org/standards)
 
 ---
 
@@ -21,5 +21,5 @@ Our mission is to improve the developer experience by building lightweight and e
 We welcome contributions of all forms, from pull requests to design ideas or simply spreading the word.
 
 - [GitHub Organization](https://github.com/octovel)
-- [Contribution Guidelines](./developer/guidelines)
-- [Developer Standards](./developer/standards)
+- [Contribution Guidelines](https://developer.octovel.org/guidelines)
+- [Developer Standards](https://developer.octovel.org/standards)
