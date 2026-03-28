@@ -1,2 +1,15 @@
-theme: jekyll-theme-minimal
 title: Octovel
+description: A small group of volunteer developers building and maintaining free, fast and reliable open-source tools.
+url: "https://octovel.github.io"
+
+theme: jekyll-theme-minimal
+
+plugins:
+  - jekyll-relative-links
+
+relative_links:
+  enabled: true
+  collections: true
+
+markdown: kramdown
+highlighter: rouge
