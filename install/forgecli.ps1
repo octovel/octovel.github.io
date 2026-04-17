@@ -1,1 +1,1 @@
-Write-Test "Windows installation"
+Write-Host "Windows installation"
