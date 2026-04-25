@@ -5,8 +5,8 @@
 
 set -euo pipefail
 
-ORG="striatp"
-REPO="striatp"
+ORG="octovel"
+REPO="forgecli"
 
 printf "\033[90m[%s]\033[0m \033[34m[INFO]\033[0m %s\n" "$(date +%H:%M:%S)" "The installation process has started."
 
