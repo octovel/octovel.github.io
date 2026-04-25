@@ -9,8 +9,8 @@ param ()
 Set-StrictMode -Version 3.0
 $ErrorActionPreference = "Stop"
 
-[System.String] $Org = "octovel"
-[System.String] $Repo = "forgecli"
+[System.String] $Org = "striatp"
+[System.String] $Repo = "striatp"
 
 Write-Host "[$((Get-Date).ToString('HH:mm:ss'))] " -NoNewline -ForegroundColor DarkGray
 Write-Host "[INFO] " -NoNewline -ForegroundColor Blue
