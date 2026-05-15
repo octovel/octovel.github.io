@@ -7,6 +7,6 @@
     <meta http-equiv="refresh" content="3; url=https://github.com/octovel/kraken">
 </head>
 <body>
-    Redirecting you to the source code at <a href="https://github.com/octovel/kraken">GitHub</a>...
+    Redirecting you to the source code at <a href="https://github.com/octovel/kraken">GitHub</a>..
 </body>
 </html>
