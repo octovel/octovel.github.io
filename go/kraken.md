@@ -1,3 +1,7 @@
+---
+layout: nil
+permalink: /go/kraken
+---
 <!DOCTYPE html>
 <html>
 <head>
