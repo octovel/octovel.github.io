@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" class="transition" :class="{ 'dark': $store.theme.isDark }" x-data>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Read about Octovel's Privacy Policy and our commitment to user data privacy.">
+  <title>Privacy Policy | Octovel</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#fafaf9',
+              100: '#f5f5f4',
+              200: '#e7e5e4',
+              300: '#d6d3d1',
+              400: '#a8a29e',
+              500: '#78716c',
+              600: '#57534e',
+              700: '#44403c',
+              800: '#292524',
+              900: '#1c1917',
+              950: '#0c0a09',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    [x-cloak] {
+      display: none !important;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    html {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs/dist/cdn.min.js"></script>
+  <script>
+    document.addEventListener('alpine:init', () => {
+      Alpine.store('theme', {
+        isDark: localStorage.getItem('theme') === 'dark' ||
+          (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches),
+        toggle() {
+          this.isDark = !this.isDark;
+          localStorage.setItem('theme', this.isDark ? 'dark' : 'light');
+        }
+      });
+    });
+  </script>
+</head>
+
+<body class="transition antialiased bg-primary-50 dark:bg-primary-950 dark:text-primary-200 text-primary-950">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 pb-16 sm:pb-20 pt-0">
+    <header id="main-header"
+      class="sticky top-0 z-50 flex items-center justify-between py-6 sm:py-8 bg-transparent transition-all duration-300 px-2 rounded-b-2xl mb-8">
+      <a href="/" class="flex items-center gap-4 sm:gap-5 hover:opacity-80 transition-opacity">
+        <img class="w-11 h-11 object-contain dark:invert" src="/logo.png" alt="Octovel logo" />
+        <div>
+          <h1 class="font-medium tracking-tight text-xl sm:text-2xl text-primary-950 dark:text-white leading-tight">
+            Octovel</h1>
+        </div>
+      </a>
+      <div class="flex items-center gap-2">
+        <a href="mailto:contact@octovel.org">
+          <button
+            class="inline-flex items-center justify-center rounded-full transition dark:hover:bg-primary-400/10 dark:text-primary-200 focus-visible:ring-2 focus:outline-none h-10 w-10 hover:bg-primary-500/10 ring-primary-950 text-primary-950 shrink-0"
+            type="button">
+            <i class="ri-mail-open-fill text-xl"></i>
+          </button>
+        </a>
+
+        <button
+          class="inline-flex items-center justify-center rounded-full transition dark:hover:bg-primary-400/10 dark:text-primary-200 focus-visible:ring-2 focus:outline-none h-10 w-10 hover:bg-primary-500/10 ring-primary-950 text-primary-950 shrink-0"
+          type="button" @click="$store.theme.toggle()">
+          <span class="sr-only">Toggle theme mode</span>
+          <i class="ri-sun-line text-xl" :class="{ 'hidden': !$store.theme.isDark }" x-cloak></i>
+          <i class="ri-moon-line text-xl" :class="{ 'hidden': $store.theme.isDark }" x-cloak></i>
+        </button>
+      </div>
+    </header>
+
+    <div id="page-content" class="transition-all duration-300">
+      <div class="mb-8 ml-2">
+        <a href="/" class="inline-flex items-center gap-2 text-sm text-primary-600 dark:text-primary-400">
+          <i class="ri-arrow-left-line"></i>
+          <span>Back to Home</span>
+        </a>
+      </div>
+
+      <div class="mb-10 ml-2">
+        <h1 class="font-medium tracking-tight text-3xl sm:text-4xl text-primary-950 dark:text-white mb-2">Privacy Policy
+        </h1>
+        <p class="text-xs dark:text-primary-200/50 text-primary-950/50">Effective: March 28th, 2026</p>
+      </div>
+
+      <div class="space-y-6 text-sm sm:text-base leading-relaxed dark:text-primary-200/70 text-primary-950/70 ml-2">
+        <p class="text-base font-medium dark:text-primary-200 text-primary-950 leading-relaxed">
+          Applies to: octovel.org and all Octovel open-source products
+        </p>
+
+        <div>
+          <h2 class="font-medium tracking-tight text-xl sm:text-2xl mt-10 mb-4 text-primary-950 dark:text-white">
+            Introduction</h2>
+          <p class="mb-4">Octovel is a non-profit, volunteer-driven open-source organization. We build and maintain free
+            developer tools with a strong commitment to simplicity, transparency, and user respect.</p>
+          <p class="mb-4">This Privacy Policy describes how Octovel handles information in connection with the use of
+            our website (octovel.org) and all Products maintained by the Octovel organization.</p>
+          <p>The short version: <strong>we do not collect any data about you. Not even telemetry.</strong></p>
+        </div>
+
+        <div>
+          <h2 class="font-medium tracking-tight text-xl sm:text-2xl mt-10 mb-4 text-primary-950 dark:text-white">1. Data
+            Collection</h2>
+          <p class="mb-4">Octovel does not collect, store, or process any personal data, usage data, or telemetry of any
+            kind through its website or Products.</p>
+          <p class="mb-4">This means:</p>
+          <ul class="list-disc pl-5 mb-4 space-y-1.5">
+            <li>No analytics or tracking scripts are embedded in our website or software.</li>
+            <li>No telemetry, crash reports, or diagnostic data are collected from our Products.</li>
+            <li>No account registration or authentication is required to use our website or Products.</li>
+            <li>No cookies are set by Octovel beyond those strictly necessary for the website to function, if any.</li>
+            <li>No advertising networks or data brokers are involved in any capacity.</li>
+            <li>No user profiles are created or maintained.</li>
+          </ul>
+          <p>If you use our Products, we have no knowledge of it. If you visit our website, we do not track your visit.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-medium tracking-tight text-xl sm:text-2xl mt-10 mb-4 text-primary-950 dark:text-white">2.
+            Third-Party Services</h2>
+          <p class="mb-4">While Octovel itself does not collect any data, some aspects of our infrastructure rely on
+            third-party platforms that operate under their own privacy policies. These include:</p>
+          <ul class="list-disc pl-5 mb-4 space-y-1.5">
+            <li><strong>GitHub</strong> - Our source code, issues, pull requests, and community discussions are hosted
+              on GitHub. Interactions with our GitHub organization are subject to the <a
+                href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+                class="text-primary-600 dark:text-primary-400 hover:underline">GitHub Privacy Statement</a>.</li>
+            <li><strong>Discord</strong> - Our community server is hosted on Discord. Participation in our Discord
+              server is subject to the <a href="https://discord.com/privacy"
+                class="text-primary-600 dark:text-primary-400 hover:underline">Discord Privacy Policy</a>.</li>
+            <li><strong>Hosting providers</strong> - Our website may be served through a third-party hosting provider.
+              Standard server-level access logs (such as IP addresses and request timestamps) may be retained by the
+              hosting provider in accordance with their own policies. Octovel does not access or process these logs.
+            </li>
+          </ul>
+          <p>We encourage you to review the privacy policies of any third-party platforms you interact with through
+            Octovel.</p>
+        </div>
+
+        <div>
+          <h2 class="font-medium tracking-tight text-xl sm:text-2xl mt-10 mb-4 text-primary-950 dark:text-white">3.
+            Cookies</h2>
+          <p class="mb-4">Octovel does not use cookies for tracking, analytics, or advertising purposes.</p>
+          <p>If any cookies are set in connection with the website, they are strictly functional in nature, for example,
+            to preserve a user interface preference. No consent is required for strictly necessary cookies under
+            applicable regulations, and no personal data is derived from them.</p>
+        </div>
+
+        <div>
+          <h2 class="font-medium tracking-tight text-xl sm:text-2xl mt-10 mb-4 text-primary-950 dark:text-white">4.
+            Children's Privacy</h2>
+          <p>Our website and Products are not directed at children under the age of 13. We do not knowingly collect any
+            information from children. Since we collect no data at all, this applies universally.</p>
+        </div>
+
+        <div>
+          <h2 class="font-medium tracking-tight text-xl sm:text-2xl mt-10 mb-4 text-primary-950 dark:text-white">5. Your
+            Rights</h2>
+          <p class="mb-4">Since Octovel does not collect or store any personal data, there is no data to access,
+            correct, export, or delete on our end.</p>
+          <p>If you have interacted with our community spaces on GitHub or Discord, any data associated with those
+            interactions is held by those respective platforms. Please refer to their privacy policies for information
+            on exercising your rights.</p>
+        </div>
+
+        <div>
+          <h2 class="font-medium tracking-tight text-xl sm:text-2xl mt-10 mb-4 text-primary-950 dark:text-white">6.
+            Changes to This Policy</h2>
+          <p class="mb-4">Octovel reserves the right to update this Privacy Policy at any time. The effective date at
+            the top of this document will be updated accordingly. Any significant changes will be communicated through
+            appropriate community channels.</p>
+          <p>Given the nature of this policy, material changes are unlikely. We nonetheless encourage you to review this
+            page periodically.</p>
+        </div>
+
+        <div>
+          <h2 class="font-medium tracking-tight text-xl sm:text-2xl mt-10 mb-4 text-primary-950 dark:text-white">7.
+            Contact</h2>
+          <p class="mb-4">If you have any questions or concerns regarding this Privacy Policy, please reach out through
+            the following:</p>
+          <ul class="list-disc pl-5 mb-4 space-y-1.5">
+            <li><b>Discord:</b> <a href="https://discord.gg/S83Emzj5bB"
+                class="text-primary-600 dark:text-primary-400 hover:underline">discord.gg/octovel</a></li>
+            <li><b>Web:</b> <a href="https://www.octovel.org/"
+                class="text-primary-600 dark:text-primary-400 hover:underline">octovel.org</a></li>
+          </ul>
+          <p class="italic text-xs mt-6 dark:text-primary-200/50 text-primary-950/50">This Privacy Policy was last
+            reviewed and updated in 2026.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="mt-20 pt-8 text-center text-sm dark:text-primary-200/50 text-primary-950/50">
+      <p>© 2026 Octovel. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    const header = document.getElementById('main-header');
+    const content = document.getElementById('page-content');
+
+    function updateEffects() {
+      const scrollTop = window.scrollY;
+
+      if (scrollTop > 10) {
+        header.classList.add('bg-primary-50/90', 'dark:bg-primary-950/90', 'py-4');
+        header.classList.remove('py-6', 'sm:py-8');
+      } else {
+        header.classList.remove('bg-primary-50/90', 'dark:bg-primary-950/90', 'py-4');
+        header.classList.add('py-6', 'sm:py-8');
+      }
+
+      const contentTop = content.getBoundingClientRect().top;
+      const dist = -contentTop;
+
+      if (dist > 0) {
+        const fadeHeight = Math.min(40, dist);
+        const mask = `linear-gradient(to bottom, transparent ${dist}px, black ${dist + fadeHeight}px)`;
+        content.style.webkitMaskImage = mask;
+        content.style.maskImage = mask;
+      } else {
+        content.style.webkitMaskImage = 'none';
+        content.style.maskImage = 'none';
+      }
+    }
+
+    window.addEventListener('scroll', updateEffects);
+    window.addEventListener('resize', updateEffects);
+    updateEffects();
+  </script>
+</body>
+
+</html>

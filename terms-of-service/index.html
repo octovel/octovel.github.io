@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" class="transition" :class="{ 'dark': $store.theme.isDark }" x-data>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Read about Octovel's Terms of Service that govern your use of octovel.org and all associated products.">
+  <title>Terms of Service | Octovel</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#fafaf9',
+              100: '#f5f5f4',
+              200: '#e7e5e4',
+              300: '#d6d3d1',
+              400: '#a8a29e',
+              500: '#78716c',
+              600: '#57534e',
+              700: '#44403c',
+              800: '#292524',
+              900: '#1c1917',
+              950: '#0c0a09',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    [x-cloak] {
+      display: none !important;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    html {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs/dist/cdn.min.js"></script>
+  <script>
+    document.addEventListener('alpine:init', () => {
+      Alpine.store('theme', {
+        isDark: localStorage.getItem('theme') === 'dark' ||
+          (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches),
+        toggle() {
+          this.isDark = !this.isDark;
+          localStorage.setItem('theme', this.isDark ? 'dark' : 'light');
+        }
+      });
+    });
+  </script>
+</head>
+
+<body class="transition antialiased bg-primary-50 dark:bg-primary-950 dark:text-primary-200 text-primary-950">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 pb-16 sm:pb-20 pt-0">
+    <header id="main-header"
+      class="sticky top-0 z-50 flex items-center justify-between py-6 sm:py-8 bg-transparent transition-all duration-300 px-2 rounded-b-2xl mb-8">
+      <a href="/" class="flex items-center gap-4 sm:gap-5 hover:opacity-80 transition-opacity">
+        <img class="w-11 h-11 object-contain dark:invert" src="/logo.png" alt="Octovel logo" />
+        <div>
+          <h1 class="font-medium tracking-tight text-xl sm:text-2xl text-primary-950 dark:text-white leading-tight">
+            Octovel</h1>
+        </div>
+      </a>
+      <div class="flex items-center gap-2">
+        <a href="mailto:contact@octovel.org">
+          <button
+            class="inline-flex items-center justify-center rounded-full transition dark:hover:bg-primary-400/10 dark:text-primary-200 focus-visible:ring-2 focus:outline-none h-10 w-10 hover:bg-primary-500/10 ring-primary-950 text-primary-950 shrink-0"
+            type="button">
+            <i class="ri-mail-open-fill text-xl"></i>
+          </button>
+        </a>
+
+        <button
+          class="inline-flex items-center justify-center rounded-full transition dark:hover:bg-primary-400/10 dark:text-primary-200 focus-visible:ring-2 focus:outline-none h-10 w-10 hover:bg-primary-500/10 ring-primary-950 text-primary-950 shrink-0"
+          type="button" @click="$store.theme.toggle()">
+          <span class="sr-only">Toggle theme mode</span>
+          <i class="ri-sun-line text-xl" :class="{ 'hidden': !$store.theme.isDark }" x-cloak></i>
+          <i class="ri-moon-line text-xl" :class="{ 'hidden': $store.theme.isDark }" x-cloak></i>
+        </button>
+      </div>
+    </header>
+
+    <div id="tos-content" class="transition-all duration-300">
+      <div class="mb-8 ml-2">
+        <a href="/" class="inline-flex items-center gap-2 text-sm text-primary-600 dark:text-primary-400">
+          <i class="ri-arrow-left-line"></i>
+          <span>Back to Home</span>
+        </a>
+      </div>
+
+      <div class="mb-10 ml-2">
+        <h1 class="font-medium tracking-tight text-3xl sm:text-4xl text-primary-950 dark:text-white mb-2">Terms of
+          Service
+        </h1>
+        <p class="text-xs dark:text-primary-200/50 text-primary-950/50">Effective: March 28th, 2026</p>
+      </div>
+
+      <div class="space-y-6 text-sm sm:text-base leading-relaxed dark:text-primary-200/70 text-primary-950/70 ml-2">
+        <p class="text-base font-medium dark:text-primary-200 text-primary-950 leading-relaxed">
+          These Terms of Service will help you better understand how we govern your access and use of the Octovel
+          website
+          and software.
+        </p>
+
+        <div>
+          <h2 class="font-medium tracking-tight text-xl sm:text-2xl mt-10 mb-4 text-primary-950 dark:text-white">
+            Introduction</h2>
+          <p class="mb-4">These Terms of Service <b>("Terms")</b> govern your access to and use of the Octovel website
+            <b>(octovel.org)</b> and all open-source software, tools, and services maintained by the Octovel
+            organization
+            <b>("Products")</b>. By accessing the website or using any of our Products, you agree to be bound by these
+            Terms.
+          </p>
+          <p class="mb-4">Octovel is a non-profit, volunteer-driven open-source organization. Our Products are provided
+            free of charge and without warranty. Please read these Terms carefully before using any Octovel service or
+            software.</p>
+          <p>If you do not agree to these Terms, you must discontinue your use of the website and Products immediately.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-medium tracking-tight text-xl sm:text-2xl mt-10 mb-4 text-primary-950 dark:text-white">1.
+            Acceptable Use</h2>
+
+          <h3 class="font-medium tracking-tight text-base sm:text-lg mt-6 mb-2 text-primary-950 dark:text-white">1.1
+            Permitted Use</h3>
+          <p class="mb-4">You may access and use the Octovel website and Products for lawful purposes, in accordance
+            with
+            these Terms and any additional guidelines published in individual repositories.</p>
+
+          <h3 class="font-medium tracking-tight text-base sm:text-lg mt-6 mb-2 text-primary-950 dark:text-white">1.2
+            Prohibited Use</h3>
+          <p class="mb-4">You must not use the Octovel website or Products to:</p>
+          <ul class="list-disc pl-5 mb-4 space-y-1.5">
+            <li>Violate any applicable local, national, or international law or regulation.</li>
+            <li>Engage in any activity that is harmful, fraudulent, deceptive, threatening, abusive, or harassing.</li>
+            <li>Distribute malware, spyware, or any other malicious or harmful software.</li>
+            <li>Attempt to gain unauthorized access to any system, network, or data.</li>
+            <li>Interfere with or disrupt the integrity or performance of the website or any Octovel infrastructure.
+            </li>
+            <li>Use automated means to scrape, crawl, or extract data from the website without prior written permission.
+            </li>
+            <li>Misrepresent your identity or affiliation with Octovel or any other organization.</li>
+            <li>Use the Octovel name, branding, or Products in a manner that implies endorsement without authorization.
+            </li>
+          </ul>
+
+          <h3 class="font-medium tracking-tight text-base sm:text-lg mt-6 mb-2 text-primary-950 dark:text-white">1.3
+            Community Spaces</h3>
+          <p>Use of Octovel community spaces, including GitHub repositories and the Discord server, is additionally
+            governed by the <a href="https://community.octovel.org/guidelines"
+              class="text-primary-600 dark:text-primary-400 hover:underline">Community Guidelines</a>. In the event of a
+            conflict between these Terms and the Community Guidelines, these Terms take precedence.</p>
+        </div>
+
+        <div>
+          <h2 class="font-medium tracking-tight text-xl sm:text-2xl mt-10 mb-4 text-primary-950 dark:text-white">2.
+            Intellectual Property & Licenses</h2>
+
+          <h3 class="font-medium tracking-tight text-base sm:text-lg mt-6 mb-2 text-primary-950 dark:text-white">2.1
+            Open-Source Licenses</h3>
+          <p class="mb-4">All Octovel Products are released under open-source licenses. The specific license applicable
+            to
+            each project is identified in the `LICENSE` file located at the root of the relevant repository. By using
+            any
+            Octovel Product, you agree to comply with the terms of its applicable license.</p>
+
+          <h3 class="font-medium tracking-tight text-base sm:text-lg mt-6 mb-2 text-primary-950 dark:text-white">2.2
+            Website Content</h3>
+          <p class="mb-4">The content published on octovel.org, including text, graphics, logos, and documentation, is
+            the
+            property of Octovel unless otherwise stated. You may not reproduce, distribute, or create derivative works
+            from website content without prior written permission, except where such use is expressly permitted by an
+            applicable open-source or Creative Commons license.</p>
+
+          <h3 class="font-medium tracking-tight text-base sm:text-lg mt-6 mb-2 text-primary-950 dark:text-white">2.3
+            Contributions</h3>
+          <p class="mb-4">By submitting a contribution to any Octovel repository, you agree that your contribution will
+            be
+            licensed under the same license as the project you are contributing to. You affirm that you have the right
+            to
+            submit the contribution and that it does not infringe the intellectual property rights of any third party.
+          </p>
+
+          <h3 class="font-medium tracking-tight text-base sm:text-lg mt-6 mb-2 text-primary-950 dark:text-white">2.4
+            Trademarks</h3>
+          <p>The Octovel name and associated logos are the property of the Octovel organization. Nothing in these Terms
+            grants you the right to use the Octovel name or trademarks in connection with any product, service, or
+            activity without prior written authorization.</p>
+        </div>
+
+        <div>
+          <h2 class="font-medium tracking-tight text-xl sm:text-2xl mt-10 mb-4 text-primary-950 dark:text-white">3. Data
+            &
+            Privacy</h2>
+
+          <h3 class="font-medium tracking-tight text-base sm:text-lg mt-6 mb-2 text-primary-950 dark:text-white">3.1
+            Privacy Policy</h3>
+          <p class="mb-4">Your use of the Octovel website is subject to our <a href="/privacy-policies"
+              class="text-primary-600 dark:text-primary-400 hover:underline">Privacy Policy</a>, which is incorporated
+            into these Terms by reference. Octovel does not collect, store, or process any personal data, usage data, or
+            telemetry of any kind. The Privacy Policy describes this in full, along with information about third-party
+            platforms we rely on.</p>
+
+          <h3 class="font-medium tracking-tight text-base sm:text-lg mt-6 mb-2 text-primary-950 dark:text-white">3.2
+            Cookies</h3>
+          <p class="mb-4">Octovel does not use cookies for tracking, analytics, or advertising purposes. If any cookies
+            are set in connection with the website, they are strictly functional in nature. No personal data is
+            collected
+            or derived from them.</p>
+
+          <h3 class="font-medium tracking-tight text-base sm:text-lg mt-6 mb-2 text-primary-950 dark:text-white">3.3
+            Third-Party Services</h3>
+          <p>The website and Products may integrate with or link to third-party services (such as GitHub). Octovel is
+            not
+            responsible for the privacy practices or content of those services. We encourage you to review their
+            respective terms and privacy policies.</p>
+        </div>
+
+        <div>
+          <h2 class="font-medium tracking-tight text-xl sm:text-2xl mt-10 mb-4 text-primary-950 dark:text-white">4.
+            Limitation of Liability</h2>
+
+          <h3 class="font-medium tracking-tight text-base sm:text-lg mt-6 mb-2 text-primary-950 dark:text-white">4.1
+            Provided "As Is"</h3>
+          <p class="mb-4">The Octovel website and all Products are provided on an "as is" and "as available" basis,
+            without warranty of any kind, express or implied. Octovel makes no representations or warranties regarding
+            the
+            accuracy, completeness, reliability, or fitness for a particular purpose of any content or software
+            provided.
+          </p>
+
+          <h3 class="font-medium tracking-tight text-base sm:text-lg mt-6 mb-2 text-primary-950 dark:text-white">4.2 No
+            Liability for Damages</h3>
+          <p class="mb-4">To the fullest extent permitted by applicable law, Octovel and its contributors shall not be
+            liable for any direct, indirect, incidental, special, consequential, or punitive damages arising from:</p>
+          <ul class="list-disc pl-5 mb-4 space-y-1.5">
+            <li>Your use of or inability to use the website or any Product.</li>
+            <li>Any errors, bugs, or interruptions in the website or Products.</li>
+            <li>Any unauthorized access to or alteration of your data.</li>
+            <li>Any third-party conduct or content accessed through the website or Products.</li>
+          </ul>
+
+          <h3 class="font-medium tracking-tight text-base sm:text-lg mt-6 mb-2 text-primary-950 dark:text-white">4.3
+            Volunteer Organization</h3>
+          <p>Octovel is operated entirely by volunteers. As such, continuity of service, response times, and feature
+            availability cannot be guaranteed. Octovel reserves the right to modify, suspend, or discontinue any Product
+            or aspect of the website at any time without notice or liability.</p>
+        </div>
+
+        <div>
+          <h2 class="font-medium tracking-tight text-xl sm:text-2xl mt-10 mb-4 text-primary-950 dark:text-white">5.
+            Termination & Suspension</h2>
+
+          <h3 class="font-medium tracking-tight text-base sm:text-lg mt-6 mb-2 text-primary-950 dark:text-white">5.1
+            Termination by You</h3>
+          <p class="mb-4">You may stop using the Octovel website and Products at any time. As Octovel does not collect
+            or
+            store any personal data, there is no data to request removal of on our end. If you have interacted with
+            third-party platforms such as GitHub or Discord, refer to their respective privacy policies for data removal
+            procedures.</p>
+
+          <h3 class="font-medium tracking-tight text-base sm:text-lg mt-6 mb-2 text-primary-950 dark:text-white">5.2
+            Termination by Octovel</h3>
+          <p class="mb-4">Octovel reserves the right to suspend or permanently restrict your access to any community
+            space, repository, or service at its sole discretion, with or without notice, if you are found to have
+            violated these Terms, the Community Guidelines, or any applicable law.</p>
+          <p class="mb-4">Termination of access does not affect any rights or obligations that arose prior to
+            termination,
+            and does not entitle you to any refund or compensation.</p>
+
+          <h3 class="font-medium tracking-tight text-base sm:text-lg mt-6 mb-2 text-primary-950 dark:text-white">5.3
+            Effect of Termination</h3>
+          <p>Upon termination of your access, any licenses granted to you under these Terms will immediately cease.
+            Provisions of these Terms that by their nature should survive termination, including intellectual property
+            rights, limitation of liability, and any accrued obligations, will continue to apply.</p>
+        </div>
+
+        <div>
+          <h2 class="font-medium tracking-tight text-xl sm:text-2xl mt-10 mb-4 text-primary-950 dark:text-white">6.
+            Changes to These Terms</h2>
+          <p class="mb-4">Octovel reserves the right to update these Terms at any time. When changes are made, the
+            effective date at the top of this document will be updated accordingly. For significant changes, notice will
+            be provided through appropriate community channels. Your continued use of the website or Products following
+            any update constitutes your acceptance of the revised Terms.</p>
+          <p>We encourage you to review these Terms periodically.</p>
+        </div>
+
+        <div>
+          <h2 class="font-medium tracking-tight text-xl sm:text-2xl mt-10 mb-4 text-primary-950 dark:text-white">7.
+            Governing Law</h2>
+          <p>These Terms are governed by and construed in accordance with applicable law. As Octovel is an
+            internationally
+            distributed volunteer organization, no specific jurisdiction is designated. In the event of a dispute, the
+            parties agree to first attempt resolution in good faith before pursuing any formal legal proceedings.</p>
+        </div>
+
+        <div>
+          <h2 class="font-medium tracking-tight text-xl sm:text-2xl mt-10 mb-4 text-primary-950 dark:text-white">Contact
+          </h2>
+          <p class="mb-4">For questions or concerns regarding these Terms, please reach out through the following:</p>
+          <ul class="list-disc pl-5 mb-4 space-y-1.5">
+            <li><b>Discord:</b> <a href="https://discord.gg/S83Emzj5bB"
+                class="text-primary-600 dark:text-primary-400 hover:underline">discord.gg/octovel</a></li>
+            <li><b>Web:</b> <a href="https://www.octovel.org/"
+                class="text-primary-600 dark:text-primary-400 hover:underline">octovel.org</a></li>
+          </ul>
+          <p class="italic text-xs mt-6 dark:text-primary-200/50 text-primary-950/50">These Terms of Service were last
+            reviewed and updated in 2026.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="mt-20 pt-8 text-center text-sm dark:text-primary-200/50 text-primary-950/50">
+      <p>© 2026 Octovel. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    const header = document.getElementById('main-header');
+    const content = document.getElementById('tos-content');
+
+    function updateEffects() {
+      const scrollTop = window.scrollY;
+
+      if (scrollTop > 10) {
+        header.classList.add('bg-primary-50/90', 'dark:bg-primary-950/90', 'py-4');
+        header.classList.remove('py-6', 'sm:py-8');
+      } else {
+        header.classList.remove('bg-primary-50/90', 'dark:bg-primary-950/90', 'py-4');
+        header.classList.add('py-6', 'sm:py-8');
+      }
+
+      const contentTop = content.getBoundingClientRect().top;
+      const dist = -contentTop;
+
+      if (dist > 0) {
+        const fadeHeight = Math.min(40, dist);
+        const mask = `linear-gradient(to bottom, transparent ${dist}px, black ${dist + fadeHeight}px)`;
+        content.style.webkitMaskImage = mask;
+        content.style.maskImage = mask;
+      } else {
+        content.style.webkitMaskImage = 'none';
+        content.style.maskImage = 'none';
+      }
+    }
+
+    window.addEventListener('scroll', updateEffects);
+    window.addEventListener('resize', updateEffects);
+    updateEffects();
+  </script>
+</body>
+
+</html>

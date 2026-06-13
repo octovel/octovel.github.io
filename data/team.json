@@ -1,0 +1,28 @@
+{
+  "team": [
+    {
+      "name": "Striatp",
+      "role": "Chief - Lead Developer",
+      "github": "https://github.com/striatp",
+      "pfp": ""
+    },
+    {
+      "name": "Bekian",
+      "role": "Lead Developer",
+      "github": "https://github.com/Bekian",
+      "pfp": ""
+    },
+    {
+      "name": "Clyders",
+      "role": "UI/UX Developer",
+      "github": "https://github.com/Clyders",
+      "pfp": ""
+    },
+    {
+      "name": "Kyll (Aram)",
+      "role": "Lead Developer",
+      "github": "https://github.com/aram-j",
+      "pfp": ""
+    }
+  ]
+}
