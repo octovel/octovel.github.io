@@ -493,7 +493,7 @@
         }
 
         const pfpHtml = pfpUrl
-          ? `<img src="${escapeHtml(pfpUrl)}" alt="${escapeHtml(member.name)}" class="w-12 h-12 rounded-lg object-cover bg-primary-500/20 dark:bg-primary-400/20 shrink-0" onerror="this.onerror=null; this.outerHTML='<div class=&quot;w-12 h-12 rounded-full bg-primary-500/20 dark:bg-primary-400/20 flex items-center justify-center shrink-0&quot;><i class=&quot;ri-user-line text-lg&quot;></i></div>';">`
+          ? `<img src="${escapeHtml(pfpUrl)}" alt="${escapeHtml(member.name)}" class="w-12 h-12 rounded-lg object-cover shrink-0" onerror="this.onerror=null; this.outerHTML='<div class=&quot;w-12 h-12 rounded-full flex items-center justify-center shrink-0&quot;><i class=&quot;ri-user-line text-lg&quot;></i></div>';">`
           : `<div class="w-12 h-12 rounded-lg bg-primary-500/20 dark:bg-primary-400/20 flex items-center justify-center shrink-0"><i class="ri-user-line text-lg"></i></div>`;
 
         const githubLink = member.github
