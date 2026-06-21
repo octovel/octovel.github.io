@@ -4,8 +4,40 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Welcome to Octovel organization. Find us about more.">
+  <meta name="description"
+    content="A small group of volunteer developers building and maintaining free, fast and reliable open-source tools.">
+  <meta name="keywords"
+    content="Octovel, developer tools, open source, CLI orchestrator, warp, kraken, Go framework, TypeScript SDK, developer software, non-profit coding">
+  <meta name="robots" content="index, follow">
   <title>Home | Octovel</title>
+  <link rel="canonical" href="https://octovel.org/">
+  <meta property="og:site_name" content="Octovel">
+  <meta property="og:title" content="Home | Octovel">
+  <meta property="og:description"
+    content="A small group of volunteer developers building and maintaining free, fast and reliable open-source tools.">
+  <meta property="og:url" content="https://octovel.org/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://octovel.org/logo-full.png">
+  <meta property="og:image:alt" content="Octovel Logo">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Home | Octovel">
+  <meta name="twitter:description"
+    content="A small group of volunteer developers building and maintaining free, fast and reliable open-source tools.">
+  <meta name="twitter:image" content="https://octovel.org/logo-full.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Octovel",
+    "url": "https://octovel.org",
+    "logo": "https://octovel.org/logo-full.png",
+    "sameAs": [
+      "https://github.com/Octovel",
+      "https://discord.gg/S83Emzj5bB"
+    ],
+    "description": "A small group of volunteer developers building and maintaining free, fast and reliable open-source tools."
+  }
+  </script>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -461,7 +493,7 @@
         }
 
         const pfpHtml = pfpUrl
-          ? `<img src="${escapeHtml(pfpUrl)}" alt="${escapeHtml(member.name)}" class="w-12 h-12 rounded-lg object-cover shrink-0" onerror="this.onerror=null; this.outerHTML='<div class=&quot;w-12 h-12 rounded-full flex items-center justify-center shrink-0&quot;><i class=&quot;ri-user-line text-lg&quot;></i></div>';">`
+          ? `<img src="${escapeHtml(pfpUrl)}" alt="${escapeHtml(member.name)}" class="w-12 h-12 rounded-lg object-cover bg-primary-500/20 dark:bg-primary-400/20 shrink-0" onerror="this.onerror=null; this.outerHTML='<div class=&quot;w-12 h-12 rounded-full bg-primary-500/20 dark:bg-primary-400/20 flex items-center justify-center shrink-0&quot;><i class=&quot;ri-user-line text-lg&quot;></i></div>';">`
           : `<div class="w-12 h-12 rounded-lg bg-primary-500/20 dark:bg-primary-400/20 flex items-center justify-center shrink-0"><i class="ri-user-line text-lg"></i></div>`;
 
         const githubLink = member.github
