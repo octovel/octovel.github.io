@@ -1,24 +1,3 @@
 {
-  "repo": [
-    {
-      "id": "warp",
-      "repo": "https://github.com/octovel/warp",
-      "branch": "main",
-      "name": "warp",
-      "description": "A lightweight and fast command-line interface tool to orchestrate commands.",
-      "version": "1.0.0",
-      "author": "Octovel Team",
-      "license": "MIT"
-    },
-    {
-      "id": "kraken",
-      "repo": "https://github.com/octovel/kraken",
-      "branch": "main",
-      "name": "kraken",
-      "description": "Kraken is a lightweight and feature-rich framework to build command-line interfaces with Go.",
-      "version": "1.0.0",
-      "author": "Octovel Team",
-      "license": "MIT"
-    }
-  ]
+  "repo": []
 }
