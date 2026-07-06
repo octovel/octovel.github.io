@@ -196,15 +196,51 @@
         </a>
       </div>
 
-      <div class="p-5 bg-primary-500/5 dark:bg-primary-400/5 rounded-2xl text-center">
-        <a href="//github.com/Octovel">
-          <div class="text-2xl text-primary-950 dark:text-primary-50">
-            <i class="ri-github-fill"></i>
+      <div x-data="{ platform: 'github' }"
+        class="p-5 bg-primary-500/5 dark:bg-primary-400/5 rounded-2xl text-center relative group">
+        <a :href="platform === 'github' ? '//github.com/Octovel' : '//codeberg.org/Octovel'" class="block select-none">
+          <div class="relative h-8 flex items-center justify-center text-primary-950 dark:text-primary-50">
+            <span class="absolute flex items-center justify-center transition-all duration-300 transform"
+              :class="platform === 'github' ? 'opacity-100 scale-100' : 'opacity-0 scale-75 pointer-events-none'">
+              <i class="ri-github-fill text-2xl"></i>
+            </span>
+            <span class="absolute flex items-center justify-center transition-all duration-300 transform"
+              :class="platform === 'codeberg' ? 'opacity-100 scale-100' : 'opacity-0 scale-75 pointer-events-none'"
+              x-cloak>
+              <div class="w-6 h-6 bg-no-repeat invert dark:invert-0"
+                style="background-image: url('https://codeberg.org/assets/img/logo-250px-dark.png'); background-size: 35px auto; background-position: -6px 0px;">
+              </div>
+            </span>
           </div>
-          <div class="mt-1 text-sm text-primary-950/70 dark:text-primary-200/70">
-            Github
+          <div
+            class="relative h-5 mt-1 flex items-center justify-center text-sm text-primary-950/70 dark:text-primary-200/70">
+            <span class="absolute transition-all duration-300"
+              :class="platform === 'github' ? 'opacity-100 translate-y-0' : 'opacity-0 pointer-events-none'">
+              Github
+            </span>
+            <span class="absolute transition-all duration-300"
+              :class="platform === 'codeberg' ? 'opacity-100 translate-y-0' : 'opacity-0 pointer-events-none'" x-cloak>
+              Codeberg
+            </span>
           </div>
         </a>
+        <button @click.stop.prevent="platform = (platform === 'github' ? 'codeberg' : 'github')"
+          class="absolute top-2 right-2 p-1.5 rounded-lg transition-all duration-300 bg-primary-500/0 hover:bg-primary-500/10 dark:hover:bg-primary-400/10 text-primary-950/40 hover:text-primary-950 dark:text-primary-200/40 dark:hover:text-primary-200"
+          :title="platform === 'github' ? 'Switch to Codeberg' : 'Switch to GitHub'">
+          <div class="relative w-4 h-4 flex items-center justify-center">
+            <span class="absolute transition-all duration-300 transform"
+              :class="platform === 'github' ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-75 -rotate-90 pointer-events-none'">
+              <div class="w-4 h-4 bg-no-repeat invert dark:invert-0"
+                style="background-image: url('https://codeberg.org/assets/img/logo-250px-dark.png'); background-size: 23px auto; background-position: -4px 0px;">
+              </div>
+            </span>
+            <span class="absolute transition-all duration-300 transform"
+              :class="platform === 'codeberg' ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-75 rotate-90 pointer-events-none'"
+              x-cloak>
+              <i class="ri-github-fill text-lg"></i>
+            </span>
+          </div>
+        </button>
       </div>
     </div>
 
@@ -230,7 +266,7 @@
       </div>
 
       <main x-show="tab === 'projects'" x-cloak>
-        <div class="mb-6 relative">
+        <div id="search-container" class="mb-6 relative">
           <span
             class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-primary-950/40 dark:text-primary-200/40">
             <i class="ri-search-line"></i>
@@ -310,6 +346,14 @@
           </div>
         </div>
       </section>
+
+      <footer class="py-4 mt-8 flex items-center justify-center">
+        <div class="text-sm">
+          <p class="text-primary-900 dark:text-primary-200/70">
+            © 2026 Octovel. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </div>
   </div>
 
@@ -546,9 +590,16 @@
         const data = await res.json();
         const entries = data.repo || [];
         if (entries.length === 0) {
-          countSpan.textContent = '0 projects listed';
-          listDiv.innerHTML = `<p class="text-center text-sm dark:text-primary-200/70 text-primary-950/70 py-10">No projects listed yet.</p>`;
+          document.getElementById('search-container').style.display = 'none';
+          countSpan.style.display = 'none';
+          listDiv.innerHTML = `
+            <div class="rounded-3xl overflow-hidden aspect-[2/1] bg-primary-500/5 dark:bg-primary-400/5 shadow-sm">
+              <img class="w-full h-full object-cover" src="https://raw.githubusercontent.com/octovel/.github/refs/heads/main/assets/github_profile_banner.svg" alt="Octovel Banner" />
+            </div>
+          `;
         } else {
+          document.getElementById('search-container').style.display = 'block';
+          countSpan.style.display = 'block';
           allrepo = await Promise.all(entries.map(resolverepo));
           renderrepo(allrepo);
         }
