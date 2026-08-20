@@ -11,7 +11,7 @@
 	<meta property="og:site_name" content="Octovel">
 	<meta property="og:title" content="Octovel">
 	<meta property="og:description"
-  content="A small group of volunteer developers building and maintaining free, fast and reliable open-source tools.">
+		content="A small group of volunteer developers building and maintaining free, fast and reliable open-source tools.">
 	<meta property="og:url" content="https://www.octovel.org/">
 	<meta property="og:type" content="website">
 	<meta property="og:image" content="https://www.octovel.org/favicon.svg">
@@ -26,16 +26,16 @@
 	<link rel="icon" type="image/svg+xml" href="favicon.svg">
 	<script type="application/ld+json">
 	{
-	"@context": "https://schema.org",
-	"@type": "Organization",
-	"name": "Octovel",
-	"url": "https://www.octovel.org",
-	"logo": "https://www.octovel.org/favicon.svg",
-	"sameAs": [
-		"https://github.com/octovel",
-		"https://discord.gg/S83Emzj5bB"
-	],
-	"description": "A small group of volunteer developers building and maintaining free, fast and reliable open-source tools."
+		"@context": "https://schema.org",
+		"@type": "Organization",
+		"name": "Octovel",
+		"url": "https://www.octovel.org",
+		"logo": "https://www.octovel.org/favicon.svg",
+		"sameAs": [
+			"https://github.com/octovel",
+			"https://discord.gg/S83Emzj5bB"
+		],
+		"description": "A small group of volunteer developers building and maintaining free, fast and reliable open-source tools."
 	}
 	</script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,7 +44,7 @@
 	<script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-[#232634] bg-[url(./bg.svg)] bg-cover bg-center bg-no-repeat min-h-dvh">
+<body class="bg-[#1F222D] min-h-dvh">
 	<header class="sticky top-0 z-50 w-full border-b border-white/10 bg-[#232634] text-white">
 		<div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6">
 			<a href="https://www.octovel.org" class="flex items-center space-x-3">
@@ -75,9 +75,30 @@
 			</div>
 		</div>
 	</header>
-	<section class="flex min-h-[calc(100vh-5rem)] items-center justify-center text-white">
-	    <h1 class="text-0.5xl font-semibold md:text-2xl text-center p-5">
-	        As of August 20th 2026, the website is temporarily under maintainance for a rework.
-	    </h1>
+	<section class="bg-[url(./bg.svg)] bg-cover bg-center bg-no-repeat">
+	    <div class="mx-auto flex min-h-[calc(100dvh-5rem)] max-w-7xl items-center px-6">
+	        <div class="max-w-3xl">
+	            <p class="mb-4 text-sm font-medium uppercase tracking-widest text-gray-500">Open-source software</p>
+	            <h1 class="text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
+	                We build. <span class="text-gray-400">You achieve.</span>
+	            </h1>
+	            <p class="mt-6 max-w-2xl text-lg leading-relaxed text-gray-400 sm:text-xl">
+	                A small group of volunteer developers building and maintaining
+	                free, fast and reliable open-source tools.
+	            </p>
+	            <div class="mt-8 flex items-center gap-4">
+	                <a href="https://developer.octovel.org" class="rounded-md bg-white px-5 py-3 text-sm font-medium text-[#232634] transition-colors hover:bg-gray-200">Explore our projects</a>
+	                <a href="https://github.com/octovel" class="rounded-md border border-white/10 px-5 py-3 text-sm font-medium text-gray-300 transition-colors hover:border-white/20 hover:text-white">View on GitHub</a>
+	            </div>
+	        </div>
+	    </div>
 	</section>
+	<footer>
+		<div class="mx-auto max-w-7xl min-h-[500px] flex items-center justify-center">
+			<h1 class="text-0.5xl font-semibold md:text-2xl text-center p-5 text-white">
+				As of August 20th 2026, the website is temporarily under maintainance for a rework.
+		    </h1>
+		</div>
+	</footer>
 </body>
+</html>
